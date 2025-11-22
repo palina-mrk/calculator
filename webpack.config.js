@@ -3,16 +3,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./js/script.js",
+  entry: "./script.js",
   resolve: {
       modulesDirectories: ['node_modules']
   },
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
-  },
-  resolve: {
-      modulesDirectories: ['node_modules']
   },
   module: {
     rules: [
