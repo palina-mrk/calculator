@@ -1,3 +1,5 @@
-document.querySelector('.page-title').innerHTML='NewTitle';
+const titleEl = document.querySelector('.page-title');
+
+console.log(titleEl)
 
 import './style.css'
