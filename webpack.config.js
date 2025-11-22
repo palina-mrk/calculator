@@ -4,9 +4,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./script.js",
-  resolve: {
-    modulesDirectories: ['node_modules']
-  },
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
@@ -23,6 +20,6 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: "index.html",
-    })
+    }),
   ],
 };
