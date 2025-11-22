@@ -1,3 +1,3 @@
-document.getElementById('title').style.backgroundColor='blue';
+document.getElementById('title').innerText='NewTitle';
 
 import './style.css'

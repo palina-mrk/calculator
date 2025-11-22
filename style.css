@@ -1,11 +1,3 @@
-/* Global */
-/* ------------------------------------ */
-@import "./css/global/normalize";
-@import "./css/global/fonts";
-@import "./css/global/reboot";
-@import "./css/global/container";
-@import "./css/global/visually-hidden";
-
 body {
   background-color: red;
 }
