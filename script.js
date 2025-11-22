@@ -1,3 +1,3 @@
-document.getElementById('title').innerText='NewTitle';
+document.querySelector('.page-title').innerHTML='NewTitle';
 
 import './style.css'
