@@ -1,20 +1,26 @@
 .container {
   width: 100%;
-  max-width: $max-width-desktop;
+  max-width: 1700px;
   margin: 0 auto;
   padding: 0 20px;
+}
 
-  @include vp-laptop {
-    max-width: $max-width-laptop;
+@media (max-width: 1903px) {
+  .container {
+    max-width: 1700px;
   }
+}
 
-  @include vp-tablet {
-    max-width: calc($max-width-tablet + 68px);
+@media (max-width: 1348px) {
+  .container {
+    max-width: 1288px;
     padding: 0 34px;
   }
+}
 
-  @include vp-mobile {
-    max-width: calc($max-width-mobile + 36px);
+@media (max-width: 767px) {
+  .container {
+    max-width: 374px;
     padding: 0 18px;
   }
 }

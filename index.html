@@ -8,14 +8,50 @@
   </head>
   <body>
     <main>
-      <section class="homework-description">
+      <section class="calculator">
         <div class="container">
-          <h1 class="homework-description__heading">
-            Домашняя работа №6 по JavaScript
+          <h1 class="visually-hidden">
+            Калькулятор
           </h1>
-          <p class="homework-description__note">
-            настройка линтера, хуков и github pages через workflows
-          </p>
+          <div class="calculator-body">
+            <div class="calculator-fields">
+              <span class="calculator-colors">
+                <input class="color-field" type="color" name="btn-top-color" id="btn-top-color">
+                <input class="color-field" type="color" name="btn-right-color" id="btn-right-color">
+                <input class="color-field" type="color" name="btn-standard-color" id="btn-standard-color">
+                <input class="color-field" type="color" name="text-color" id="text-color">
+                <input class="color-field" type="color" name="back-color" id="back-color">
+              </span>
+              <input class="value-field" type="number" name="num-value" id="num-value">
+            </div>
+            <div class="calculator-btns">
+              <button class="btn btn-top btn-func" type="button" id="func-reset">AC</button>
+              <button class="btn btn-top btn-func" type="button" id="func-sign">+/-</button>
+              <button class="btn btn-top btn-func" type="button" id="func-percent">%</button>
+              <button class="btn btn-right btn-func" type="button" id="func-div">:</button>
+              
+              <button class="btn btn-standard btn-input" type="button" id="input-7">7</button>
+              <button class="btn btn-standard btn-input" type="button" id="input-6">6</button>
+              <button class="btn btn-standard btn-input" type="button" id="input-5">5</button>
+              <button class="btn btn-right btn-func" type="button" id="func-mul">x</button>
+              
+              <button class="btn btn-standard btn-input" type="button" id="input-7">4</button>
+              <button class="btn btn-standard btn-input" type="button" id="input-6">5</button>
+              <button class="btn btn-standard btn-input" type="button" id="input-5">6</button>
+              <button class="btn btn-right btn-func" type="button" id="func-sub">-</button>
+
+
+              <button class="btn btn-standard btn-input" type="button" id="input-1">1</button>
+              <button class="btn btn-standard btn-input" type="button" id="input-2">2</button>
+              <button class="btn btn-standard btn-input" type="button" id="input-3">3</button>
+              <button class="btn btn-right btn-func" type="button" id="func-add">+</button>
+
+
+              <button class="btn btn-standard btn-left-bottom btn-wide btn-input" type="button" id="input-0">0</button>
+              <button class="btn btn-standard btn-input" type="button" id="input-dot">,</button>
+              <button class="btn btn-right btn-right-bottom btn-eval" type="button" id="func-eval">AC</button>
+            </div>
+          </div>
         </div>
       </section>
     </main>
