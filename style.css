@@ -28,7 +28,7 @@ main {
   background-color: #393939;
   color: #ffffff;
   padding: 1px;
-  min-width: 500px;
+  min-width: 300px;
 }
 
 .calculator-top {
@@ -54,8 +54,8 @@ main {
   height: 100%;
   color: #f6f6f6;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  font-size: 50px;
+  font-weight: 500;
+  font-size: 60px;
   line-height: 1.2;
   display: flex;
   align-items: center;
@@ -65,4 +65,12 @@ main {
 
 .btn-top {
   background-color: #413b36;
+}
+
+.btn-right {
+  background-color: #ffa500;
+}
+
+.btn-standard {
+  background-color: #63615d;
 }
