@@ -28,6 +28,7 @@ main {
   background-color: #393939;
   color: #ffffff;
   padding: 1px;
+  min-width: 500px;
 }
 
 .calculator-top {
@@ -59,6 +60,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 1;
 }
 
 .btn-top {
