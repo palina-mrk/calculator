@@ -30,10 +30,14 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+      modulesDirectories: ['node_modules']
+  },
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: "index.html",
     }),
+    new ExtractTextPlugin('bundle.css'),
   ],
 };

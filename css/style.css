@@ -5,3 +5,7 @@
 @import "./global/reboot";
 @import "./global/container";
 @import "./global/visually-hidden";
+
+body {
+  background-color: red;
+}
