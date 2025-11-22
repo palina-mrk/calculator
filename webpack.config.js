@@ -8,6 +8,9 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
+  resolve: {
+      modulesDirectories: ['node_modules']
+  },
   module: {
     rules: [
       {
@@ -15,6 +18,17 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
+    loaders: [
+      {
+          test: /\.js/,
+          loader: 'babel',
+          exclude: /(node_modules|bower_components)/
+      },
+      {
+          test: /\.css$/,
+          loader: 'style!css'
+      }
+    ]
   },
   plugins: [
     new MiniCssExtractPlugin(),
