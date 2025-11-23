@@ -36,12 +36,14 @@ btnsStandard[10] = document.querySelector('#input-dot');
 
 //all buttons for changing text color
 btnsAllArray = document.querySelectorAll('.btn');
-btnsTopArray = document.querySelectorAll('.btn-top');
-btnsRightArray = document.querySelectorAll('.btn-right');
 
-const valueSaved = 0;
-const valueVisible = 0;
+let valueSaved = '0';
+let valueVisible = '0';
+let isDot = false;
+let lastOp = '';
+const maxLength = 10;
 
+// function to change colors into calculator
 Object.keys(colorInputs).forEach((inputEl) => {
   colorInputs[inputEl].addEventListener("input", (event) => {
     switch(inputEl) {
@@ -67,15 +69,122 @@ Object.keys(colorInputs).forEach((inputEl) => {
   })
 })
 
-/*
-console.log(bodyEl);
-console.log(colorInputs);
-console.log(valueInput);
-console.log(btnsTop);
-console.log(btnsRight);
-console.log(btnsStandard);*/
+btnsStandard.forEach((btnEl, ind) => {
+  btnEl.addEventListener("click", (event) => {
+    if(valueVisible.length >= maxLength)
+      return;
+    if(valueVisible == 'error')
+      return;
 
 
+    //if btn is dot
+    if(ind == 10 && !isDot){
+      isDot = true;
+      valueVisible += '.';
+      valueInput.value = valueVisible;
+      return;
+    } else if (ind == 10)
+      return;
+
+    // btn = index value
+    if(valueVisible == '0')
+      valueVisible = String(ind); 
+    else 
+      valueVisible += String(ind);
+    
+    valueInput.value = valueVisible;
+    return;
+  })
+})
+
+btnsTop.reset.addEventListener('click', (event) => {
+  valueVisible = '0';
+  isDot = false;
+  valueSaved = '0';
+  valueInput.value = valueVisible;
+});
+
+btnsTop.sign.addEventListener('click', (event) => {
+  if(valueVisible == 'error')
+    return;
+
+  if(valueVisible[0] === '-') {
+    valueVisible = valueVisible.slice(1);
+  } else if (valueVisible !== '0')
+    valueVisible = '-' + valueVisible;
+
+  valueInput.value = valueVisible;
+});
+
+function getResult (number) {
+  if(String(number).indexOf('.') < maxLength)
+    return String(number).slice(0, maxLength);
+  else if (String(number).indexOf('.') == maxLength)
+    return String(number).slice(0, maxLength - 1);
+  else
+    return 'error';
+}
+
+btnsTop.percent.addEventListener('click', (event) => {
+  let result;
+  switch (lastOp){
+    case 'divide':
+      result = Number (valueVisible) ? Number(valueSaved) * 100 / Number (valueVisible) : 'error';     
+      break; 
+    case 'multiply':
+      result = Number(valueSaved) * Number (valueVisible) / 100;     
+      break; 
+    case 'add':
+      result = Number(valueSaved) * ( 1 + Number (valueVisible) / 100 );     
+      break; 
+    case 'subtract':
+      result = Number(valueSaved) * (1 - Number (valueVisible) / 100);     
+      break;
+    default: 
+      return; 
+  }
+  valueSaved = valueVisible; 
+  valueVisible = getResult(result);
+  isDot = valueVisible.includes('.');
+  valueInput.value = valueVisible;
+});
+
+// function to save operation type
+Object.keys(btnsRight).forEach((btnEl) => {
+  btnsRight[btnEl].addEventListener("click", (event) => {
+    if(btnEl !== 'evaluate'){
+      lastOp = btnEl;
+      valueSaved = valueVisible;
+      valueVisible = '0';
+      isDot = false;
+      return;
+    }
+
+    let result;
+    switch (lastOp){
+      case 'divide':
+        result = Number (valueVisible) ? Number(valueSaved) / Number (valueVisible) : 'error';     
+        break; 
+      case 'multiply':
+        result = Number(valueSaved) * Number (valueVisible);     
+        break; 
+      case 'add':
+        result = Number(valueSaved) + Number (valueVisible);     
+        break; 
+      case 'subtract':
+        result = Number(valueSaved) - Number (valueVisible);     
+        break;
+      default: 
+        return; 
+    }
+
+    valueSaved = valueVisible; 
+    valueVisible = getResult(result);
+    isDot = valueVisible.includes('.');
+    valueInput.value = valueVisible;
+    return;
+  })
+})
 
 // для сборки через webpack
 //import "./style.css";

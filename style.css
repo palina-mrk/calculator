@@ -40,7 +40,6 @@ main {
   flex-direction: column;
   overflow: hidden;
   background-color: #393939;
-  color: #ffffff;
   padding: 1px;
 }
 
@@ -104,6 +103,8 @@ main {
   text-align: right;
   padding: 3px 15px;
   margin: 0;
+  caret: none;
+  caret-color: transparent;
 }
 
 .value-field::-webkit-inner-spin-button,
