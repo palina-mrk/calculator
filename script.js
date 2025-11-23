@@ -202,7 +202,6 @@ document.addEventListener('keypress', (event) => {
       valueInput.value = valueVisible;
       return;
 
-    case 'Enter':
     case '=': 
       switch (lastOp){
         case 'divide':
