@@ -31,6 +31,9 @@ for (let i = 0; i <= 9; i++) {
 }
 btnsStandard[10] = document.querySelector('#input-dot');
 
+const valueSaved = 0;
+const valueVisible = 0;
+
 console.log(colorInputs);
 console.log(valueInput);
 console.log(btnsTop);
@@ -40,6 +43,6 @@ console.log(btnsStandard);
 
 
 // для сборки через webpack
-import "./style.css";
+//import "./style.css";
 
 
