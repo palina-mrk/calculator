@@ -69,8 +69,10 @@ Object.keys(colorInputs).forEach((inputEl) => {
   })
 })
 
+
+
 btnsStandard.forEach((btnEl, ind) => {
-  btnEl.addEventListener("click", (event) => {
+  btnEl.addEventListener("click", () => {
     if(valueVisible.length >= maxLength)
       return;
     if(valueVisible == 'error')
@@ -97,14 +99,14 @@ btnsStandard.forEach((btnEl, ind) => {
   })
 })
 
-btnsTop.reset.addEventListener('click', (event) => {
+btnsTop.reset.addEventListener('click', () => {
   valueVisible = '0';
   isDot = false;
   valueSaved = '0';
   valueInput.value = valueVisible;
 });
 
-btnsTop.sign.addEventListener('click', (event) => {
+btnsTop.sign.addEventListener('click', () => {
   if(valueVisible == 'error')
     return;
 
@@ -117,7 +119,9 @@ btnsTop.sign.addEventListener('click', (event) => {
 });
 
 function getResult (number) {
-  if(String(number).indexOf('.') < maxLength)
+  if (String(number).indexOf('.') === -1)
+    return (String(number).length < maxLength ? String(number) : 'error');
+  else if(String(number).indexOf('.') < maxLength)
     return String(number).slice(0, maxLength);
   else if (String(number).indexOf('.') == maxLength)
     return String(number).slice(0, maxLength - 1);
@@ -125,7 +129,7 @@ function getResult (number) {
     return 'error';
 }
 
-btnsTop.percent.addEventListener('click', (event) => {
+btnsTop.percent.addEventListener('click', () => {
   let result;
   switch (lastOp){
     case 'divide':
