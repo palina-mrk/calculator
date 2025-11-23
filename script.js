@@ -191,7 +191,7 @@ Object.keys(btnsRight).forEach((btnEl) => {
 
 document.addEventListener('keypress', (event) => {
   let result;
-  console.log(event.code);
+  console.log(event.key);
 
   switch (event.key) {
 
