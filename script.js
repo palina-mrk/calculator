@@ -120,9 +120,9 @@ btnsTop.sign.addEventListener('click', () => {
 function getResult (number) {
   if (String(number).indexOf('.') === -1)
     return (String(number).length < maxLength ? String(number) : 'error');
-  else if(String(number).indexOf('.') < maxLength)
-    return String(number).slice(0, maxLength);
-  else if (String(number).indexOf('.') == maxLength)
+  else if(String(number).indexOf('.') == maxLength - 2)
+    return String(number).slice(0, maxLength - 2);
+  else if (String(number).indexOf('.') <= maxLength)
     return String(number).slice(0, maxLength - 1);
   else
     return 'error';
