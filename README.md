@@ -2,7 +2,7 @@
 
 ## Task
 
-Проект реализует простой калькулятор согласно [техническому заданию](https://github.com/palina-mrk/calculator).
+Проект реализует простой калькулятор согласно [техническому заданию](https://github.com/palina-mrk/calculator/tehnical-task).
 
 ## How to run the app
 
@@ -41,6 +41,17 @@ npm start
 
 Сервер автоматически откроет браузер и будет перезагружать страницу при изменениях в коде.
 
+### Деплой приложения
+
+Для деплоя на github pages:
+
+```bash
+npm run build
+npm run deploy
+```
+
+Приложение доступно на https://palina-mrk.github.io/calculator/
+
 ### Проверка кода
 
 Проверка кода с помощью ESLint:
@@ -76,6 +87,7 @@ npm run lint:fix
 - `eslint.config.mjs` - конфигурация ESLint
 - `babel.config.js` - конфигурация Babel для транспиляции JavaScript
 - `index.html` - HTML шаблон приложения
+- `tehnical-task.pdf` - техническое задание
 
 ### `src/` - исходные файлы приложения
 
