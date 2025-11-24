@@ -2,7 +2,7 @@
 
 ## Task
 
-Проект реализует простой калькулятор согласно [техническому заданию](https://github.com/palina-mrk/calculator/tehnical-task).
+Проект реализует [простой калькулятор](https://palina-mrk.github.io/calculator/) согласно [техническому заданию](./tehnical-task).
 
 ## How to run the app
 
