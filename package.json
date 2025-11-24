@@ -35,7 +35,8 @@
     "mini-css-extract-plugin": "^2.9.4",
     "prettier": "^3.6.2",
     "webpack": "^5.101.2",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   },
   "transform": {
     "^.+\\.html?$": "html-loader-jest",
@@ -50,13 +51,13 @@
   "main": "babel.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/palina-mrk/otus-js-hw6.git"
+    "url": "git+https://github.com/palina-mrk/calculator.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/palina-mrk/otus-js-hw6/issues"
+    "url": "https://github.com/palina-mrk/calculator/issues"
   },
-  "homepage": "https://github.com/palina-mrk/otus-js-hw6#readme",
+  "homepage": "https://github.com/palina-mrk/calculator#readme",
   "description": ""
 }
