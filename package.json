@@ -2,13 +2,15 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "eslint": "eslint",
-    "eslint:fix": "eslint --fix",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint --fix .",
     "lint": "prettier --check .",
     "lint:fix": "prettier --write .",
     "prepare": "husky",
     "lint-staged": "lint-staged",
-    "build": "npx webpack --mode=production"
+    "build": "webpack --mode=production",
+    "dev": "webpack --mode=development --watch",
+    "start": "webpack serve --mode=development --open"
   },
   "lint-staged": {
     "*.{css,js,html,yml,md}": [
