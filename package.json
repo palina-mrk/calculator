@@ -14,10 +14,7 @@
     "deploy": "gh-pages -d dist"
   },
   "lint-staged": {
-    "*.{css,html,yml,md}": [
-      "prettier --write"
-    ],
-    "*.{js,mjs}": [
+    "*.{css,js,html,yml,md}": [
       "prettier --write",
       "eslint --fix"
     ]
